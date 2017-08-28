@@ -10,6 +10,7 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -57,18 +58,22 @@ public class Main {
         painel.add(botao01); //adicionando os botoes ao GUI
         painel.add(botao02);
 
+        String[] opcoesCombo = {"Selecione", "Opção 1", "Opção 2", "Opção 3", "Opção 4"};
+        JComboBox comboBox = new JComboBox(opcoesCombo);
+        painel.add(comboBox); //adicionando as opções ao GUI
+
         ActionListener listener = new ActionListener() { //JOptonPane falando qual ação esta acontecendo
-            @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Opção 01: " + botao01.isSelected() + //boolean qual botão esta selecionado
-                        "\nOpção 02: "+botao02.isSelected());
+                JOptionPane.showMessageDialog(frame, "Opção 01: " + botao01.isSelected()
+                        + "\nOpção 02: " + botao02.isSelected()
+                        + "\nOpção selecionada: " + comboBox.getSelectedIndex()); //boolean qual botão esta selecionado
             }
         };
 
         botao01.addActionListener(listener);
         botao02.addActionListener(listener);
 
-        frame.setVisible(true);
+        frame.setVisible(true); //último componente, faz com que a tela apareça
     }
 
 }
