@@ -5,6 +5,8 @@
  */
 package SwingApp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aline.poliveira3
@@ -26,70 +28,273 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        Informacoes = new javax.swing.JPanel();
+        Nome = new javax.swing.JLabel();
+        TetFieldNome = new javax.swing.JTextField();
+        Sobrenome = new javax.swing.JLabel();
+        TextFieldSobrenome = new javax.swing.JTextField();
+        Genero = new javax.swing.JComboBox<>();
+        GeneroLabel = new javax.swing.JLabel();
+        Idade = new javax.swing.JLabel();
+        TextFieldIdade = new javax.swing.JTextField();
+        RG = new javax.swing.JLabel();
+        TextFieldRG = new javax.swing.JTextField();
+        CPF = new javax.swing.JLabel();
+        TextFieldCPF = new javax.swing.JTextField();
+        Contato = new javax.swing.JPanel();
+        TelefoneFixo = new javax.swing.JLabel();
+        TextFieldTelefoneFixo = new javax.swing.JTextField();
+        Celular = new javax.swing.JLabel();
+        TextFieldCelular = new javax.swing.JTextField();
+        email = new javax.swing.JLabel();
+        TextFieldEmail = new javax.swing.JTextField();
+        contato = new javax.swing.JLabel();
+        ContatoSim = new javax.swing.JRadioButton();
+        ContatoNao = new javax.swing.JRadioButton();
+        Preferencia = new javax.swing.JLabel();
+        TelFixo = new javax.swing.JCheckBox();
+        TelCelular = new javax.swing.JCheckBox();
+        emailCheck = new javax.swing.JCheckBox();
+        Salvar = new javax.swing.JButton();
+        Cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Informações"));
+        Informacoes.setBorder(javax.swing.BorderFactory.createTitledBorder("Informações"));
 
-        jLabel1.setText("Nome");
+        Nome.setText("Nome");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TetFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TetFieldNomeActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Sobrenome");
+        Sobrenome.setText("Sobrenome");
 
-        jTextField2.setText("jTextField2");
+        Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Masculino", "Feminino" }));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        GeneroLabel.setText("Genero");
+
+        Idade.setText("Idade");
+
+        TextFieldIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldIdadeActionPerformed(evt);
+            }
+        });
+
+        RG.setText("RG");
+
+        TextFieldRG.setText("(apenas números)");
+        TextFieldRG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldRGActionPerformed(evt);
+            }
+        });
+
+        CPF.setText("CPF");
+
+        TextFieldCPF.setText("(apenas números)");
+
+        javax.swing.GroupLayout InformacoesLayout = new javax.swing.GroupLayout(Informacoes);
+        Informacoes.setLayout(InformacoesLayout);
+        InformacoesLayout.setHorizontalGroup(
+            InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InformacoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Nome)
+                    .addComponent(Idade)
+                    .addComponent(RG))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TetFieldNome)
+                    .addGroup(InformacoesLayout.createSequentialGroup()
+                        .addComponent(TextFieldIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                        .addGap(88, 88, 88))
+                    .addComponent(TextFieldRG))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Sobrenome)
+                    .addComponent(GeneroLabel)
+                    .addComponent(CPF))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TextFieldSobrenome)
+                    .addGroup(InformacoesLayout.createSequentialGroup()
+                        .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Genero, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                        .addGap(98, 98, 98)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        InformacoesLayout.setVerticalGroup(
+            InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InformacoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Nome)
+                    .addComponent(TetFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Sobrenome)
+                    .addComponent(TextFieldSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GeneroLabel)
+                    .addComponent(Idade)
+                    .addComponent(TextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RG)
+                    .addComponent(TextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CPF)
+                    .addComponent(TextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Contato"));
+        Contato.setBorder(javax.swing.BorderFactory.createTitledBorder("Contato"));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        TelefoneFixo.setText("Telefone Fixo");
+
+        TextFieldTelefoneFixo.setText("(apenas números)");
+        TextFieldTelefoneFixo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldTelefoneFixoActionPerformed(evt);
+            }
+        });
+
+        Celular.setText("Celular");
+
+        TextFieldCelular.setText("(apenas números)");
+        TextFieldCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldCelularActionPerformed(evt);
+            }
+        });
+
+        email.setText("e-mail");
+
+        TextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldEmailActionPerformed(evt);
+            }
+        });
+
+        contato.setText("Permite Contato:");
+
+        ContatoSim.setText("Sim");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, new javax.swing.ButtonGroup(), org.jdesktop.beansbinding.ObjectProperty.create(), ContatoSim, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        ContatoSim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContatoSimActionPerformed(evt);
+            }
+        });
+
+        ContatoNao.setText("Não");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, new javax.swing.ButtonGroup(), org.jdesktop.beansbinding.ObjectProperty.create(), ContatoNao, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        ContatoNao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContatoNaoActionPerformed(evt);
+            }
+        });
+
+        Preferencia.setText("Preferência");
+
+        TelFixo.setText("Telefone Fixo");
+
+        TelCelular.setText("Celular");
+        TelCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelCelularActionPerformed(evt);
+            }
+        });
+
+        emailCheck.setText("e-mail");
+
+        javax.swing.GroupLayout ContatoLayout = new javax.swing.GroupLayout(Contato);
+        Contato.setLayout(ContatoLayout);
+        ContatoLayout.setHorizontalGroup(
+            ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContatoLayout.createSequentialGroup()
+                        .addComponent(email)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TextFieldEmail))
+                    .addGroup(ContatoLayout.createSequentialGroup()
+                        .addGroup(ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ContatoLayout.createSequentialGroup()
+                                .addComponent(contato)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ContatoSim)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ContatoNao))
+                            .addGroup(ContatoLayout.createSequentialGroup()
+                                .addComponent(TelefoneFixo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TextFieldTelefoneFixo)
+                                .addGap(18, 18, 18)
+                                .addComponent(Celular)))
+                        .addGap(10, 10, 10)
+                        .addComponent(TextFieldCelular))
+                    .addGroup(ContatoLayout.createSequentialGroup()
+                        .addGroup(ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Preferencia)
+                            .addGroup(ContatoLayout.createSequentialGroup()
+                                .addComponent(TelFixo)
+                                .addGap(18, 18, 18)
+                                .addComponent(TelCelular)
+                                .addGap(18, 18, 18)
+                                .addComponent(emailCheck)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 172, Short.MAX_VALUE)
+        ContatoLayout.setVerticalGroup(
+            ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TelefoneFixo)
+                    .addComponent(TextFieldTelefoneFixo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Celular)
+                    .addComponent(TextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(email)
+                    .addComponent(TextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contato)
+                    .addComponent(ContatoSim)
+                    .addComponent(ContatoNao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Preferencia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TelFixo)
+                    .addComponent(TelCelular)
+                    .addComponent(emailCheck))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        Salvar.setText("SALVAR");
+        Salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarActionPerformed(evt);
+            }
+        });
+
+        Cancelar.setText("CANCELAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,26 +303,73 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Contato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Informacoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Informacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Contato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Salvar)
+                    .addComponent(Cancelar))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TetFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TetFieldNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TetFieldNomeActionPerformed
+
+    private void TextFieldIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldIdadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldIdadeActionPerformed
+
+    private void TextFieldRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldRGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldRGActionPerformed
+
+    private void TextFieldTelefoneFixoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldTelefoneFixoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldTelefoneFixoActionPerformed
+
+    private void TextFieldCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldCelularActionPerformed
+
+    private void TextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldEmailActionPerformed
+
+    private void ContatoSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContatoSimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContatoSimActionPerformed
+
+    private void TelCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelCelularActionPerformed
+
+    private void ContatoNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContatoNaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContatoNaoActionPerformed
+
+    private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
+        JOptionPane.showMessageDialog(this, "Nome: " + Nome);    }//GEN-LAST:event_SalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,11 +407,35 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel CPF;
+    private javax.swing.JButton Cancelar;
+    private javax.swing.JLabel Celular;
+    private javax.swing.JPanel Contato;
+    private javax.swing.JRadioButton ContatoNao;
+    private javax.swing.JRadioButton ContatoSim;
+    private javax.swing.JComboBox<String> Genero;
+    private javax.swing.JLabel GeneroLabel;
+    private javax.swing.JLabel Idade;
+    private javax.swing.JPanel Informacoes;
+    private javax.swing.JLabel Nome;
+    private javax.swing.JLabel Preferencia;
+    private javax.swing.JLabel RG;
+    private javax.swing.JButton Salvar;
+    private javax.swing.JLabel Sobrenome;
+    private javax.swing.JCheckBox TelCelular;
+    private javax.swing.JCheckBox TelFixo;
+    private javax.swing.JLabel TelefoneFixo;
+    private javax.swing.JTextField TetFieldNome;
+    private javax.swing.JTextField TextFieldCPF;
+    private javax.swing.JTextField TextFieldCelular;
+    private javax.swing.JTextField TextFieldEmail;
+    private javax.swing.JTextField TextFieldIdade;
+    private javax.swing.JTextField TextFieldRG;
+    private javax.swing.JTextField TextFieldSobrenome;
+    private javax.swing.JTextField TextFieldTelefoneFixo;
+    private javax.swing.JLabel contato;
+    private javax.swing.JLabel email;
+    private javax.swing.JCheckBox emailCheck;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
