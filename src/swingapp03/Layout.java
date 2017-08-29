@@ -5,6 +5,7 @@
  */
 package swingapp03;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -35,15 +36,16 @@ public class Layout {
         mainframe.pack();
 
         JPanel newPanel = new JPanel();
+        newPanel.setLayout(new BorderLayout()); // layout dos botões
         mainframe.getContentPane().add(newPanel);
 
         JButton button01 = new JButton("Botão 01");
         JButton button02 = new JButton("Botão 02");
         JButton button03 = new JButton("Botão 03");
 
-        newPanel.add(button01);
-        newPanel.add(button02);
-        newPanel.add(button03);
+        newPanel.add(button01, BorderLayout.LINE_START); //posição dos botões
+        newPanel.add(button02, BorderLayout.CENTER);
+        newPanel.add(button03, BorderLayout.LINE_END);
 
         mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainframe.setVisible(true);
