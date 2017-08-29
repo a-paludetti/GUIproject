@@ -51,7 +51,7 @@ public class Main {
         JRadioButton botao01 = new JRadioButton("Opção 01"); //botao
         JRadioButton botao02 = new JRadioButton("Opção 02"); //botao
 
-        ButtonGroup buttonGroup = new ButtonGroup();
+        ButtonGroup buttonGroup = new ButtonGroup(); //agrupamento de botoes
         buttonGroup.add(botao01); //adicionando os botoes ao agrupamento de botoes
         buttonGroup.add(botao02);
 
@@ -70,7 +70,7 @@ public class Main {
             }
         };
 
-        botao01.addActionListener(listener);
+        botao01.addActionListener(listener); //necessário para ação/reação de cada botão
         botao02.addActionListener(listener);
 
         frame.setVisible(true); //último componente, faz com que a tela apareça
